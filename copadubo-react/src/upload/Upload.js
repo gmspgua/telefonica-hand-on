@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Dropzone from "../dropzone/Dropzone";
 import "./Upload.css";
 import Progress from "../progress/Progress";
+require('dotenv/config');
+
 
 class Upload extends Component {
   constructor(props) {
@@ -78,10 +80,12 @@ class Upload extends Component {
         reject(req.response);
       });
 
+      const DB_PASS = process.env.REACT_APP_URL_SERVICE;
+
       const formData = new FormData();
       formData.append("file", file, file.name);
 
-      req.open("POST", "https://copadubo.appspot.com/copadubo/relatorio");
+      req.open("POST",  DB_PASS + "/copadubo/relatorio");
       req.send(formData);
 	  
 	  req.onreadystatechange = function() { // Chama a função quando o estado mudar.
