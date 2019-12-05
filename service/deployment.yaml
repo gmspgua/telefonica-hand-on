@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: service-deployment
+spec:
+  template:
+    metadata:
+      labels:
+       name: service-pod
+    spec:
+      containers:
+        - name: container-view
+          image: 130593/copadubo-service:latest
+          ports:
+            - containerPort: 8080
