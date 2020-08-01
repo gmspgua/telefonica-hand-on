@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: view-service
 spec:
-  type: NodePort
-  ports:
-    - port: 3000
   selector:
-    name: aplicacao-pod 
+    app: aplicacao-pod
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
