@@ -7,4 +7,4 @@ spec:
   ports:
     - port: 3000
   selector:
-    name: aplicacao-pod
+    name: copadubo
