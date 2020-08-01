@@ -1,21 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: copadubo-deployment
-  labels:
-    app: copadubo
+  name: view-deployment
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: copadubo
   template:
     metadata:
       labels:
-        app: copadubo
+       name: aplicacao-pod
     spec:
       containers:
-      - name: copadubo-view
-        image: 130593/copadubo-view:latest
-        ports:
-        - containerPort: 3000
+        - name: container-view
+          image: 130593/copadubo-view:latest
+          ports:
+            - containerPort: 3000
