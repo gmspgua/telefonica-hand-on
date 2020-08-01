@@ -1,22 +1,21 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: view-deployment
+  name: copadubo-deployment
+  labels:
+    app: copadubo
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: copadubo
   template:
     metadata:
       labels:
-       name: aplicacao-pod
+        app: copadubo
     spec:
       containers:
-        - name: container-view
-          image: 130593/copadubo-view:latest
-          env:
-          - name: URL_SERVICE
-            value: "http://telefonica.vivo"
-          ports:
-            - containerPort: 3000
-
-
-
-
+      - name: copadubo-view
+        image: 130593/copadubo-view:latest
+        ports:
+        - containerPort: 3000
