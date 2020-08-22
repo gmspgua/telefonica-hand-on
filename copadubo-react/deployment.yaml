@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: copadubo
+spec:
+  selector:
+    matchLabels:
+      run: copadubo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: copadubo
+    spec:
+      containers:
+        - name: copadubo-view
+          image: 130593/copadubo-view:latest
+          ports:
+            - containerPort: 3000
+              protocol: TCP
