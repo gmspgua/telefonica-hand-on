@@ -1,0 +1,11 @@
+1. Aprovisionamento do EKS.
+    terraform
+2. Criar hosted Zone na Route 53.
+    console
+3. Requisitar certificados no ACM.
+    console
+4. Criar ingress controller e NLB.
+    kubectl apply -f kubernetes/deploy.yaml
+
+    https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb
+    https://www.youtube.com/watch?v=ma5n_5sOePw&t=778s

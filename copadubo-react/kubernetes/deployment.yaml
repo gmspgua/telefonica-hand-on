@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: copadubo
+      app: copadubo
   replicas: 1
   template:
     metadata:
       labels:
-        run: copadubo
+        app: copadubo
     spec:
       containers:
         - name: copadubo-view
